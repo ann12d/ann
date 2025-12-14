@@ -1,130 +1,421 @@
-<!DOCTYPE html> 
-<html lang="ru"> 
-<head> 
-    <meta charset="UTF-8"/> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Портфолио Андреевой Анны</title> 
-     
-    <!-- Подключение шрифта Calibri --> 
-    <link href='https://fonts.googleapis.com/css?family=Calibri' rel='stylesheet'> 
-     
-    <style> 
-        body { 
-            font-family: 'Cascadia Mono ExtraLight', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: black; 
-            color: rgb(0, 0, 0); 
-            font-size: 18px; 
-        } 
-         
-        header { 
-            padding-top: 50px; 
-            border-bottom: 2px solid rgb(0, 0, 0); 
-            display: flex; /* Размещаем фото и текст в ряд */
-            justify-content: space-between; /* Распределяем пространство между элементами */
-        } 
-         
-        h2 { 
-            font-size: 32px; 
-            margin-bottom: 20px; 
-            position: relative; 
-            z-index: 1; 
-            padding: 15px; 
-            background-color: rgba(86, 79, 79, 0.5); /* Полупрозрачный белый фон */ 
-            border: 2px solid rgb(0, 0, 0); /* Рамка */ 
-        } 
-         
-        h3 { 
-            font-size: 22px; 
-            line-height: 1.5; 
-            padding: 20px; 
-            border: 2px solid rgb(0, 0, 0); 
-        } 
-        h4 { 
-            font-size: 22px; 
-            margin-bottom: 20px; 
-            position: relative; 
-            z-index: 1; 
-            padding: 15px; 
-            background-color: rgba(86, 79, 79, 0.5); /* Полупрозрачный белый фон */ 
-            border: 2px solid rgb(0, 0, 0); /* Рамка */ }
-         
-        nav ul { 
-            list-style-type: none; 
-            display: flex; 
-            gap: 30px; 
-            margin-top: 40px; 
-            justify-content: center; /* Выравнивание по центру */
-        } 
-         
-        nav a { 
-            color: rgb(0, 0, 0); 
-            text-decoration: none; 
-            font-weight: bold; 
-            transition: all 0.3s ease-in-out; 
-            padding: 10px 20px; /* Добавлен отступ для рамки */
-            border: 2px solid rgb(0, 0, 0); /* Рамка */
-            background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый фон */
-        } 
-         
-        nav a:hover { 
-            color: rgb(47, 41, 41); 
-            transform: scale(1.05); 
-        } 
-         
-        #main-content p { 
-            font-size: 25px; 
-            padding: 20px; 
-            border: 2px solid rgb(0, 0, 0); 
-        } 
-         
-        .image-container { 
-            margin-bottom: 20px; /* Отступ снизу */
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Андреевой Анны</title>
+    
+    <!-- Подключение шрифтов -->
+    <link href='https://fonts.googleapis.com/css?family=Calibri' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #62809a;
+            --light-bg: rgba(255, 255, 255, 0.15);
+            --dark-bg: rgba(0, 0, 0, 0.7);
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --border-color: rgba(255, 255, 255, 0.3);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-         .image-container img {
-        width: 400px;
-        height: auto;
-        margin-right: 0px;
         
-    }
-    body {
-    font-family: 'Cascadia Mono ExtraLight', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    background-image: url('foto/fon/photo_5303438867531160797_y.jpg'); /* Добавление фона */
-    background-repeat: no-repeat; /* Изображение не повторяется */
-    background-position: center top; /* Центрируем изображение по горизонтали и фиксируем сверху */
-    background-size: cover; /* Масштабируем изображение под размер экрана */
-}
-nav a:hover {
-            text-decoration: none; /* Убрать подчеркивание при наведении */
-            background-color: #62809a; /* Цвет фона при наведении */
-            color: white; /* Цвет текста при наведении */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-</style>
-
-    </style> 
-</head> 
-<body> 
-    <header> 
-      <h2>Электронное портфолио студентки ГПОАУ АО АПК 334 группы Андреевой Анны</h2> 
-        <div class="image-container">   
-            <a href="one.html">   
-                <img src="new/fotonew.jpg" alt="Изображение 1"/>    
-            </a>   
+        
+        body {
+            font-family: 'Inter', 'Calibri', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: var(--text-light);
+            font-size: 18px;
+            line-height: 1.6;
+            background-image: url('foto/fon/photo_5303438867531160797_y.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(44, 62, 80, 0.6) 100%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            padding: 40px 0;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media (min-width: 992px) {
+            header {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+        }
+        
+        .header-content {
+            flex: 1;
+            max-width: 800px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding: 20px;
+            background: var(--dark-bg);
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.8rem;
+                padding: 15px;
+            }
+        }
+        
+        .image-container {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-container img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--light-bg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-container img:hover {
+            transform: scale(1.03);
+            border-color: var(--secondary-color);
+            box-shadow: 0 12px 40px rgba(52, 152, 219, 0.3);
+        }
+        
+        .image-container::after {
+            content: '';
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.2), transparent);
+            animation: rotate 6s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            padding: 30px;
+            background: var(--dark-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            margin-top: 30px;
+            font-weight: 400;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+        }
+        
+        nav {
+            margin: 50px 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 16px 35px;
+            border-radius: 50px;
+            background: var(--dark-bg);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 200px;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+        
+        nav a:hover {
+            color: white;
+            border-color: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        nav a:hover::before {
+            width: 100%;
+        }
+        
+        nav i {
+            font-size: 1.2rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 0 30px;
+        }
+        
+        .skill-tag {
+            background: rgba(52, 152, 219, 0.2);
+            color: var(--text-light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background: rgba(52, 152, 219, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .section-divider {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .section-divider span {
+            display: inline-block;
+            padding: 0 20px;
+            background: var(--dark-bg);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .image-container img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .image-container::after {
+                width: 260px;
+                height: 260px;
+            }
+            
+            nav a {
+                min-width: 180px;
+                padding: 14px 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h4 {
+                font-size: 1.1rem;
+                padding: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav a {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .image-container img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .image-container::after {
+                width: 210px;
+                height: 210px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="image-container animate-fade-in-up delay-1">
+                <a href="one.html">
+                    <img src="new/fotonew.jpg" alt="Андреева Анна"/>
+                </a>
+            </div>
+            
+            <div class="header-content animate-fade-in-up">
+                <h2>Электронное портфолио студентки ГПОАУ АО АПК 334 группы Андреевой Анны</h2>
+                
+                <h4 class="animate-fade-in-up delay-1">
+                    Я Андреева Анна, учусь в Амурском педагогическом колледже по специальности «Информационные системы и программирование». Помимо учёбы, я занимаюсь монтажом видео, изучаю английский язык. Активно участвую в жизни колледжа и общежития.
+                    <br><br>
+                    Мои навыки включают работу с HTML, CSS и Photoshop. Осваиваю основы программирования и активно применяю их при создании веб-страниц. Моя цель — развиваться в области веб-разработки и дизайна, создавая привлекательные пользовательские интерфейсы.
+                </h4>      
+        <div class="section-divider">
+            <span>Навигация</span>
         </div>
-        <h4>Обо мне: Я Андреева Анна, учусь в Амурском педагогическом колледже по специальности «Информационные системы и программирование». Помимо учёбы, я занимаюсь монтажом видео, изучаю английский язык. Активно участвую в жизни колледжа и общежития. Мои навыки включают работу с HTML, CSS и Photoshop. Осваиваю основы программирования и активно применяю их при создании веб-страниц. Моя цель — развиваться в области веб-разработки и дизайна, создавая привлекательные пользовательские интерфейсы.</h4> 
-    </header> 
-    <nav> 
-        <ul> 
-            <li><a href="gramota.html">Грамоты</a></li> 
-            <li><a href="proekt3.html">Проекты</a></li> 
-            <li><a href="contact.html">Контакты</a></li>
-        </ul> 
-    </nav> 
-</body> 
+        
+        <nav>
+            <ul>
+                <li class="animate-fade-in-up delay-2">
+                    <a href="gramota.html">
+                        <i class="fas fa-award"></i>
+                        <span>Грамоты и награды</span>
+                    </a>
+                </li>
+                <li class="animate-fade-in-up delay-3">
+                    <a href="proekt3.html">
+                        <i class="fas fa-code"></i>
+                        <span>Проекты</span>
+                    </a>
+                </li>
+                <li class="animate-fade-in-up">
+                    <a href="contact.html">
+                        <i class="fas fa-envelope"></i>
+                        <span>Контакты</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+ 
+    </div>
+</body>
 </html>
